@@ -224,18 +224,32 @@ nav a:hover { color: var(--olive); }
 .sueltas p { font-size: var(--step--1); color: var(--muted); }
 @media (max-width: 900px) { .bonos { grid-template-columns: 1fr; } }
 
+/* Preguntas frecuentes */
+.faq-wrap { grid-template-columns: .8fr 1.2fr; align-items: start; }
+.faq { display: grid; min-width: 0; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+  padding-block: 1.1rem; font-family: var(--font-display); font-weight: 700; font-size: 1.08rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--olive-soft); color: var(--olive); font-size: 1.2rem; transition: transform .2s ease;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:focus-visible { outline: 3px solid var(--berry); outline-offset: 3px; }
+.faq details p { color: var(--muted); max-width: 62ch; padding-bottom: 1rem; }
+@media (max-width: 860px) { .faq-wrap { grid-template-columns: 1fr; } }
+
 /* Reserva */
 .booking { grid-template-columns: 1fr 1fr; align-items: center; }
 .booking-text { display: grid; gap: 1rem; min-width: 0; }
 .checks.small { font-size: .98rem; color: var(--muted); }
-.widget {
-  min-height: 22rem; border: 2px dashed var(--line); border-radius: var(--radius); background: var(--surface);
-  display: grid; place-content: center; justify-items: center; gap: .7rem; text-align: center; padding: 2rem; color: var(--muted);
-}
-.widget svg { color: var(--brand); }
-.widget strong { color: var(--ink); font-family: var(--font-display); font-size: 1.15rem; max-width: 22ch; }
-.widget span { font-size: var(--step--1); max-width: 34ch; }
-@media (max-width: 860px) { .booking { grid-template-columns: 1fr; } .widget { min-height: 16rem; } }
+.booking { align-items: start; }
+.widget { min-width: 0; min-height: 22rem; border: 1px solid var(--line); border-radius: var(--radius); background: #FFFFFF; padding: 1rem; overflow: hidden; }
+.widget iframe { max-width: 100%; }
+@media (max-width: 860px) { .booking { grid-template-columns: 1fr; } }
 
 /* Contacto */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 1.6rem; min-width: 0; }
@@ -297,6 +311,7 @@ img { max-width: 100%; height: auto; }
         <li><a href="#enfoque">Cómo trabajo</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#bonos">Bonos</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -543,6 +558,60 @@ img { max-width: 100%; height: auto; }
     </div>
   </section>
 
+  <section class="section band" id="preguntas" aria-labelledby="faq-t">
+    <div class="wrap faq-wrap">
+      <div class="section-head">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 id="faq-t">Lo que suele preguntarse <span class="accent">antes de venir</span></h2>
+        <p class="lead">Si tu duda no está aquí, escríbeme y te respondo yo.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Cómo es la primera consulta?</summary>
+          <p>Dura aproximadamente una hora. Hacemos una entrevista completa sobre tus hábitos, estilo de vida, actividad física, gustos, objetivos y posibles patologías. Si vienes por un problema digestivo, también repasamos tus síntomas, tu medicación y las pruebas que te hayan hecho.</p>
+          <p>A los 2 o 3 días tenemos una sesión corta, de 10 a 20 minutos, en la que te entrego tu menú personalizado para dos semanas, te lo explico y te doy la guía fotográfica de medidas caseras.</p>
+        </details>
+        <details>
+          <summary>¿Qué tengo que llevar?</summary>
+          <p>Si tienes analíticas recientes, informes médicos o el listado de la medicación y los suplementos que tomas, tráelos o envíamelos antes. Me ayudan a valorar tu caso desde el primer día. Si no tienes nada, no pasa nada: empezamos igual.</p>
+        </details>
+        <details>
+          <summary>¿Cómo son las consultas de seguimiento y cada cuánto son?</summary>
+          <p>Duran unos 30 minutos. Revisamos tus avances, resolvemos dudas, trabajamos lo que te cueste y ajustamos los objetivos. Después de cada una recibes un menú nuevo para dos semanas y las herramientas de lo que estemos trabajando.</p>
+          <p>Al principio son cada 2 o 2 semanas y media. Cuando los hábitos se van consolidando, se espacian a una al mes o según lo que necesites.</p>
+        </details>
+        <details>
+          <summary>¿Me vas a pesar?</summary>
+          <p>Solo si es útil para tu caso y te parece bien. Mi enfoque no está centrado en el peso: en consulta miramos cómo te encuentras, tus síntomas, tu energía y tu relación con la comida.</p>
+        </details>
+        <details>
+          <summary>¿Me vas a quitar alimentos?</summary>
+          <p>No sin un motivo claro. En problemas digestivos a veces hace falta retirar algunos alimentos durante un tiempo, pero siempre con una pauta ordenada y con un plan para volver a introducirlos. El objetivo es que comas lo más variado posible.</p>
+        </details>
+        <details>
+          <summary>¿Puedo hacer la consulta online?</summary>
+          <p>Sí. Las consultas online son por Google Meet y funcionan igual que las presenciales. Recibirás el enlace en cuanto se confirme la cita.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se paga y cuándo queda confirmada la cita?</summary>
+          <p>El pago se hace por adelantado, de la sesión o del bono. Antes de la primera consulta también te enviaré un formulario para firmar el consentimiento de protección de datos. La cita queda confirmada cuando recibo el pago y el formulario.</p>
+        </details>
+        <details>
+          <summary>¿Y si no puedo ir o llego tarde?</summary>
+          <p>Puedes cancelar o cambiar la cita avisando con al menos 24 horas de antelación. Si avisas más tarde o no vienes, te envío por correo el material preparado para esa sesión. Si llegas con retraso, hay un margen de cortesía de 10 a 15 minutos. Las situaciones excepcionales las valoramos en cada caso.</p>
+        </details>
+        <details>
+          <summary>¿Necesito que me derive un médico? ¿Lo cubre la Seguridad Social?</summary>
+          <p>No necesitas derivación: puedes pedir cita directamente. La consulta de nutrición no está cubierta por la sanidad pública. Si estás en tratamiento, puedo coordinarme con tu médico cuando tú lo autorices.</p>
+        </details>
+        <details>
+          <summary>¿Puedo venir con un familiar?</summary>
+          <p>Claro. En el acompañamiento oncológico y en la alimentación complementaria es muy habitual, porque muchas veces quien cocina en casa es otra persona.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="reserva" aria-labelledby="reserva-t">
     <div class="wrap booking">
       <div class="booking-text">
@@ -555,10 +624,10 @@ img { max-width: 100%; height: auto; }
           <li>¿Dudas antes de reservar? Escríbeme y te respondo yo</li>
         </ul>
       </div>
-      <div class="widget" role="note">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 3v3M16 3v3M8 13.5h2M14 13.5h2M8 17h2"/></svg>
-        <strong>Aquí irá el calendario de reservas de Doctoralia</strong>
-        <span>Se añade con el código del widget que te da Doctoralia, al montar la web definitiva.</span>
+      <div class="widget">
+        <!-- Widget de reserva de Doctoralia (código copiado del panel de Doctoralia) -->
+        <a id="zl-url" class="zl-url" href="https://www.doctoralia.es/perfil/isabel-lara-munoz" rel="nofollow" data-zlw-doctor="isabel-lara-munoz" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de reserva de citas médicas">Reserve una cita</a>
+        <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "https://platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
       </div>
     </div>
   </section>

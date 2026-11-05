@@ -265,7 +265,7 @@ img.photo { display: block; padding: 0; object-fit: cover; height: auto; }
 @media (max-width: 900px) { .bonos { grid-template-columns: 1fr; } }
 
 /* Galería De mi cocina: cuadrícula en ordenador, carrusel deslizable en móvil */
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; min-width: 0; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; min-width: 0; max-width: 900px; }
 .gallery figure { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; min-width: 0; }
 .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; transition: transform .6s ease; }
 .gallery figure:hover img { transform: scale(1.04); }
@@ -547,7 +547,7 @@ img { max-width: 100%; height: auto; }
           <a class="btn small" href="#reserva">Reservar</a>
         </article>
         <article class="service">
-          <img class="service-img" src="assets/fotos/pollo-arroz.webp" alt="Plato de arroz blanco con pollo en salsa y sésamo" width="900" height="675" loading="lazy">
+          <img class="service-img" src="assets/fotos/tortitas-arandanos-ancha.webp" alt="Tortitas con arándanos, crema de cacahuete y chocolate" width="900" height="675" loading="lazy">
           <span class="tag">Complementario</span>
           <h3>Hábitos y composición corporal</h3>
           <p>Mejorar tu alimentación sin centrarlo todo en el peso.</p>
@@ -639,16 +639,15 @@ img { max-width: 100%; height: auto; }
   <section class="section" id="cocina" aria-labelledby="cocina-t">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">De mi cocina</span>
-        <h2 id="cocina-t">Comer rico, variado <span class="accent">y sin culpa</span></h2>
-        <p class="lead">Platos de mi día a día: sencillos, de temporada y sin alimentos prohibidos. Es lo mismo que enseño en consulta.</p>
+        <span class="eyebrow">En Instagram</span>
+        <h2 id="cocina-t">Nutrición fiable <span class="accent">para tu día a día</span></h2>
+        <p class="lead">En @el_plato_lleno comparto consejos prácticos, desmonto bulos sobre alimentación, hablo de salud digestiva y, de vez en cuando, alguna idea de plato sencillo y sin alimentos prohibidos.</p>
       </div>
       <div class="gallery">
-        <figure><img src="assets/fotos/tortitas-arandanos.webp" alt="Tortitas con arándanos, crema de cacahuete y chocolate" width="700" height="700" loading="lazy"><figcaption>Tortitas con arándanos</figcaption></figure>
-        <figure><img src="assets/fotos/bowl-platano.webp" alt="Bol de yogur con plátano, nueces, cereales y crema de cacahuete" width="700" height="700" loading="lazy"><figcaption>Bol de yogur y plátano</figcaption></figure>
-        <figure><img src="assets/fotos/polo-sandia.webp" alt="Polo casero de sandía en un molde infantil" width="700" height="700" loading="lazy"><figcaption>Polos caseros de fruta</figcaption></figure>
+        <figure><img src="assets/fotos/bowl-platano.webp" alt="Bol de yogur con plátano, nueces, cereales y crema de cacahuete" width="700" height="700" loading="lazy"><figcaption>Ideas de desayuno</figcaption></figure>
+        <figure><img src="assets/fotos/polo-sandia.webp" alt="Polo casero de sandía en un molde infantil" width="700" height="700" loading="lazy"><figcaption>Alimentación en familia</figcaption></figure>
         <a class="gallery-ig" href="https://www.instagram.com/el_plato_lleno/" target="_blank" rel="noopener">
-          <span class="accent">Más recetas</span>
+          <span class="accent">Consejos, bulos y más</span>
           <strong>@el_plato_lleno</strong>
           <span>Sígueme en Instagram →</span>
         </a>

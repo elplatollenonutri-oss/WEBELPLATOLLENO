@@ -183,17 +183,16 @@ nav a:hover { color: var(--olive); }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 1.5rem; } .about .photo { max-width: 320px; } .about-visual { margin-top: 2rem; } }
 
 /* Lo que sí / lo que no */
-.yesno { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: start; }
-.yes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2rem; }
-.yes div { display: grid; gap: .35rem; min-width: 0; }
-.yes h3 { font-size: 1.1rem; }
-.yes p { color: var(--muted); font-size: .98rem; }
-.no { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; display: grid; gap: 1rem; }
-.no h3 { font-family: var(--font-accent); font-style: italic; font-weight: 400; font-size: 1.7rem; }
-.no ul { list-style: none; padding: 0; margin: 0; display: grid; }
-.no li { display: grid; grid-template-columns: 22px 1fr; gap: .6rem; padding-block: .7rem; border-top: 1px solid var(--line); color: var(--muted); }
-.no li::before { content: "✕"; color: var(--grain); font-weight: 700; }
-@media (max-width: 860px) { .yesno { grid-template-columns: 1fr; } }
+.yesno { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; max-width: 880px; margin: 3rem auto 0; }
+.yn-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; display: grid; gap: 1rem; align-content: start; min-width: 0; }
+.yn-card.yes { border-top: 4px solid var(--brand); }
+.yn-card.no { border-top: 4px solid var(--grain); }
+.yn-card h3 { font-family: var(--font-accent); font-style: italic; font-weight: 400; font-size: 1.7rem; }
+.yn-card ul { list-style: none; padding: 0; margin: 0; display: grid; }
+.yn-card li { display: grid; grid-template-columns: 22px 1fr; gap: .6rem; padding-block: .75rem; border-top: 1px solid var(--line); color: var(--muted); }
+.yn-card.yes li::before { content: "✓"; color: var(--brand); font-weight: 700; }
+.yn-card.no li::before { content: "✕"; color: var(--grain); font-weight: 700; }
+@media (max-width: 760px) { .yesno { grid-template-columns: 1fr; margin-top: 2rem; } }
 @media (max-width: 520px) { .yes { grid-template-columns: 1fr; } }
 
 /* Servicios */
@@ -456,13 +455,17 @@ img { max-width: 100%; height: auto; }
         </li>
       </ol>
       <div class="yesno">
-        <div class="yes">
-          <div><h3>Tiempo para escucharte</h3><p>Síntomas, historia clínica, medicación, hábitos y tu relación con la comida.</p></div>
-          <div><h3>Un plan ordenado</h3><p>Diario de síntomas, pautas progresivas y reintroducción de alimentos poco a poco.</p></div>
-          <div><h3>Educación en cada sesión</h3><p>Herramientas para organizar tu menú, entender las raciones y escuchar tu hambre y saciedad.</p></div>
-          <div><h3>Trabajo en equipo</h3><p>Despacho compartido con una psicóloga y coordinación con tu médico cuando lo autorizas.</p></div>
+        <div class="yn-card yes">
+          <h3>Lo que sí hago</h3>
+          <ul>
+            <li>Escucharte con tiempo y sin prisas</li>
+            <li>Pautas progresivas y reintroducción de alimentos</li>
+            <li>Una herramienta educativa en cada sesión</li>
+            <li>Trabajar en equipo con psicóloga y con tu médico</li>
+            <li>Que aprendas a organizarte por tu cuenta</li>
+          </ul>
         </div>
-        <div class="no">
+        <div class="yn-card no">
           <h3>Lo que no hago</h3>
           <ul>
             <li>Dietas cerradas que no te enseñan nada</li>

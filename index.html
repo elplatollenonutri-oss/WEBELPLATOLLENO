@@ -6,7 +6,9 @@
 <meta name="description" content="Consulta de nutrición clínica en Jaén especializada en problemas digestivos y nutrición oncológica. Isabel Lara, dietista-nutricionista colegiada y farmacéutica.">
 <!-- Mientras la web tenga textos provisionales, Google no la indexa. Quitar esta línea al publicar la versión definitiva. -->
 <meta name="robots" content="noindex">
-<title>El Plato Lleno · Nutricionista digestiva y oncológica en Jaén</title>
+<title>Isabel Lara - Nutricionista en Jaén</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
@@ -91,8 +93,12 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--berry); outline-o
 
 /* Cabecera */
 header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; }
-.logo { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: .5rem; }
-.logo svg { flex: none; }
+.logo { display: flex; align-items: center; flex: none; }
+.logo img { display: block; height: 64px; width: auto; }
+/* El logo es negro y gris: en modo oscuro se invierte para que se lea en blanco */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo img { filter: invert(1); } }
+:root[data-theme="dark"] .logo img { filter: invert(1); }
+@media (max-width: 480px) { .logo img { height: 52px; } }
 nav ul { display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
 nav a { color: var(--ink); text-decoration: none; font-size: var(--step--1); font-weight: 700; }
 nav a:hover { color: var(--olive); }
@@ -306,13 +312,7 @@ img { max-width: 100%; height: auto; }
 <header>
   <div class="wrap">
     <a class="logo" href="#inicio" aria-label="El Plato Lleno, inicio">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <circle cx="15" cy="15" r="14" fill="var(--plate-rim)"/>
-        <path d="M15 15 L15 4 A11 11 0 0 0 15 26 Z" fill="var(--brand)"/>
-        <path d="M15 15 L15 4 A11 11 0 0 1 26 15 Z" fill="var(--berry)"/>
-        <path d="M15 15 L26 15 A11 11 0 0 1 15 26 Z" fill="var(--grain)"/>
-      </svg>
-      El Plato Lleno
+      <img src="assets/logo.webp" alt="El Plato Lleno Nutrición" width="480" height="408">
     </a>
     <nav aria-label="Principal">
       <ul>

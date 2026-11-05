@@ -124,6 +124,15 @@ img.photo { display: block; padding: 0; object-fit: cover; height: auto; }
 .section .wrap { padding-block: 4.5rem; display: grid; gap: 2.2rem; }
 .section-head { display: grid; gap: .6rem; max-width: 65ch; }
 .band { background: var(--surface); border-block: 1px solid var(--line); }
+/* "Es para ti si…": foto del despacho de fondo, velada a la izquierda para que el texto se lea bien */
+#para-ti {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--surface) 94%, transparent) 0%, color-mix(in srgb, var(--surface) 88%, transparent) 50%, color-mix(in srgb, var(--surface) 45%, transparent) 100%),
+    url("fotos/despacho.webp") center 40% / cover no-repeat;
+}
+@media (max-width: 860px) {
+  #para-ti { background: linear-gradient(color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--surface) 90%, transparent)), url("fotos/despacho.webp") center / cover no-repeat; }
+}
 .tinted { background: var(--tint); }
 
 /* Para ti si */

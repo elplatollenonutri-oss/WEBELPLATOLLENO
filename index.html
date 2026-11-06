@@ -140,27 +140,37 @@
           <div class="tl-card"><span class="tl-when">Cuando llegue el momento</span><h3>Autonomía</h3><p>Alta planificada cuando ya organizas tu alimentación por tu cuenta, con revisiones opcionales si las necesitas.</p></div>
         </li>
       </ol>
-      <div class="yesno">
-        <div class="yn-card yes">
-          <h3>Lo que sí hago</h3>
-          <ul>
+      <!-- Tarjeta que gira: cara delantera "Lo que sí hago", trasera "Lo que no hago". Sin JavaScript se ven las dos una al lado de otra. -->
+      <div class="yesno flip" id="flip">
+        <div class="flip-tabs" role="tablist" aria-label="Mi enfoque">
+          <button type="button" role="tab" id="tab-si" aria-controls="cara-si" aria-selected="true">✓ Lo que sí hago</button>
+          <button type="button" role="tab" id="tab-no" aria-controls="cara-no" aria-selected="false">✕ Lo que no hago</button>
+        </div>
+        <div class="flip-stage">
+          <div class="flip-inner">
+            <div class="yn-card yes flip-face" id="cara-si" role="tabpanel" aria-labelledby="tab-si">
+              <h3>Lo que sí hago</h3>
+              <ul>
             <li>Escucharte con tiempo y sin prisas</li>
             <li>Pautas progresivas y reintroducción de alimentos</li>
             <li>Una herramienta educativa en cada sesión</li>
             <li>Trabajar en equipo con psicóloga y con tu médico</li>
             <li>Que aprendas a organizarte por tu cuenta</li>
           </ul>
-        </div>
-        <div class="yn-card no">
-          <h3>Lo que no hago</h3>
-          <ul>
+            </div>
+            <div class="yn-card no flip-face flip-back" id="cara-no" role="tabpanel" aria-labelledby="tab-no">
+              <h3>Lo que no hago</h3>
+              <ul>
             <li>Dietas cerradas que no te enseñan nada</li>
             <li>El peso como única medida de éxito</li>
             <li>Quitar alimentos sin un motivo claro</li>
             <li>Vender test o suplementos que no necesitas</li>
             <li>Que dependas de mí para siempre</li>
           </ul>
+            </div>
+          </div>
         </div>
+        <p class="flip-hint" aria-hidden="true">Toca o desliza la tarjeta para girarla ↻</p>
       </div>
     </div>
   </section>
@@ -486,6 +496,56 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   update();
+})();
+// Tarjeta "Lo que sí / Lo que no hago": gira al tocarla, al deslizar o con las pestañas.
+(function () {
+  var flip = document.getElementById('flip');
+  if (!flip) return;
+  var stage = flip.querySelector('.flip-stage');
+  var tabs = { si: document.getElementById('tab-si'), no: document.getElementById('tab-no') };
+  var faces = { si: document.getElementById('cara-si'), no: document.getElementById('cara-no') };
+  flip.classList.add('flip-ready');
+  function show(side) {
+    var back = side === 'no';
+    flip.classList.toggle('is-flipped', back);
+    tabs.si.setAttribute('aria-selected', String(!back));
+    tabs.no.setAttribute('aria-selected', String(back));
+    tabs.si.tabIndex = back ? -1 : 0;
+    tabs.no.tabIndex = back ? 0 : -1;
+    faces.si.toggleAttribute('inert', back);
+    faces.no.toggleAttribute('inert', !back);
+    faces.si.setAttribute('aria-hidden', String(back));
+    faces.no.setAttribute('aria-hidden', String(!back));
+  }
+  function toggle() { show(flip.classList.contains('is-flipped') ? 'si' : 'no'); }
+  tabs.si.addEventListener('click', function () { show('si'); });
+  tabs.no.addEventListener('click', function () { show('no'); });
+  flip.querySelector('.flip-tabs').addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      toggle();
+      (flip.classList.contains('is-flipped') ? tabs.no : tabs.si).focus();
+      e.preventDefault();
+    }
+  });
+  // Deslizar con el dedo o el ratón: hacia la izquierda enseña "no", hacia la derecha "sí". Un toque simple la gira.
+  var startX = null, startY = null;
+  stage.addEventListener('pointerdown', function (e) { startX = e.clientX; startY = e.clientY; });
+  stage.addEventListener('pointerup', function (e) {
+    if (startX === null) return;
+    var dx = e.clientX - startX, dy = e.clientY - startY;
+    startX = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? 'no' : 'si');
+    else if (Math.abs(dx) < 8 && Math.abs(dy) < 8) toggle();
+  });
+  stage.addEventListener('pointercancel', function () { startX = null; });
+  show('si');
+  // Amago de giro la primera vez que la tarjeta entra en pantalla
+  if ('IntersectionObserver' in window) {
+    var seen = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { flip.classList.add('peek'); seen.disconnect(); }
+    }, { threshold: 0.6 });
+    seen.observe(stage);
+  }
 })();
 </script>
 </body>

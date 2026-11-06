@@ -387,3 +387,30 @@ img { max-width: 100%; height: auto; }
 .refs { font-size: .9rem; color: var(--muted); }
 .refs li { line-height: 1.55; overflow-wrap: anywhere; }
 .disclaimer { font-size: .85rem; color: var(--muted); }
+
+/* ===== Tarjeta que gira (Lo que sí / Lo que no hago) ===== */
+.flip-tabs, .flip-hint { display: none; }
+.flip-ready.flip { grid-template-columns: 1fr; max-width: 560px; gap: 1rem; justify-items: center; }
+.flip-ready .flip-tabs {
+  display: inline-flex; gap: .25rem; padding: .3rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+}
+.flip-tabs button {
+  font: inherit; font-weight: 700; font-size: var(--step--1); border: 0; border-radius: 999px; padding: .55em 1.1em;
+  background: transparent; color: var(--muted); cursor: pointer; transition: background .3s ease, color .3s ease;
+}
+.flip-tabs button[aria-selected="true"]#tab-si { background: var(--olive); color: var(--on-olive); }
+.flip-tabs button[aria-selected="true"]#tab-no { background: var(--grain); color: #1D261C; }
+.flip-tabs button:focus-visible { outline: 3px solid var(--berry); outline-offset: 2px; }
+.flip-ready .flip-stage { width: 100%; perspective: 1400px; cursor: pointer; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.flip-ready .flip-inner { display: grid; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.3, .7, .2, 1); }
+.flip-ready .flip-face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-ready .flip-back { transform: rotateY(180deg); }
+.flip-ready.is-flipped .flip-inner { transform: rotateY(180deg); }
+/* Pequeño amago de giro la primera vez que aparece, para que se entienda que gira */
+.flip-ready.peek:not(.is-flipped) .flip-inner { animation: flip-peek 1.2s ease .2s 1; }
+@keyframes flip-peek { 0%, 100% { transform: rotateY(0); } 40% { transform: rotateY(-28deg); } 70% { transform: rotateY(8deg); } }
+.flip-ready .flip-hint { display: block; margin: 0; font-size: var(--step--1); color: var(--muted); }
+@media (prefers-reduced-motion: reduce) {
+  .flip-ready .flip-inner { transition: none; }
+  .flip-ready.peek .flip-inner { animation: none; }
+}

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261106b">
+<link rel="stylesheet" href="assets/estilos.css?v=20261106c">
 </head>
 <body>
 <div class="proto"><div class="wrap">Prototipo · fotos, reseñas y enlaces provisionales</div></div>
@@ -289,17 +289,61 @@
       <div class="reviews-head">
         <div class="section-head">
           <span class="eyebrow">Opiniones</span>
-          <h2 id="opiniones-t">Lo que dicen mis pacientes</h2>
+          <h2 id="opiniones-t">Lo que dicen <span class="accent">mis pacientes</span></h2>
         </div>
-        <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>Nota y número de reseñas de Google</span></div>
+        <div class="rating-badges">
+          <a class="rating-badge" href="https://www.google.com/maps/search/?api=1&amp;query=Isabel%20Lara%20Nutricionista%20Ja%C3%A9n" target="_blank" rel="noopener"><strong>5,0</strong><span class="stars" aria-hidden="true">★★★★★</span><span>17 opiniones en Google</span></a>
+          <a class="rating-badge" href="https://www.doctoralia.es/perfil/isabel-lara-munoz" target="_blank" rel="noopener"><span>6 opiniones en Doctoralia</span></a>
+        </div>
       </div>
-      <div class="reviews">
-        <figure class="review" style="margin:0">
-          <p>«Nos lo explicó todo muy claro y nos dio un material súper útil. Todo totalmente actualizado. Muy contentos de que haya nutricionistas así en Jaén.»</p>
-          <span>Reseña de Google · familia, alimentación complementaria (BLW)</span>
-        </figure>
-        <div class="review empty">Aquí irá otra reseña real de Google o Doctoralia</div>
-        <div class="review empty">Aquí irá otra reseña real de Google o Doctoralia</div>
+      <div class="carousel" id="opiniones-carrusel">
+        <div class="carousel-track" tabindex="0" aria-label="Opiniones de pacientes. Desliza para ver más.">
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Excelente profesional, muy cercana, amable y atenta. Me ha ayudado mucho con mi patología digestiva, ofreciendo pautas nutricionales personalizadas y explicando todo de forma clara y sencilla. […] Me he sentido escuchado y acompañado en todo momento.»</p></blockquote>
+            <figcaption><strong>JH</strong><span>Problemas digestivos · Opinión en Doctoralia</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«No sólo nos ha enseñado a diseñar un menú conjunto teniendo en cuenta nuestras necesidades como individuos, sino que todas las recetas propuestas han sido fáciles y riquísimas. Se la recomiendo a todo el mundo, de verdad.»</p></blockquote>
+            <figcaption><strong>Carmen M.</strong><span>Consulta en pareja · Opinión en Google</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Estupenda profesional y persona. No solo se centra en que haga dieta sino en que adquiera buenos hábitos y aprenda lo que estoy comiendo. […] La recomiendo 100%»</p></blockquote>
+            <figcaption><strong>Yoli S.</strong><span>Hábitos y relación con la comida · Opinión en Google</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Hacer el taller de BLW con Isabel ha sido una tranquilidad enorme para nuestra familia. Explica todo de forma muy clara y práctica, especialmente cómo cortar y ofrecer los alimentos según la edad del bebé.»</p></blockquote>
+            <figcaption><strong>Laura G.</strong><span>Taller de BLW · Opinión en Google</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Isabel me lo explicó todo con mucha calma y llegamos a un menú en el que apenas he cambiado mis hábitos, pero son comidas mucho más completas. Además no solo te da un menú, sino que aprendes mucho con sus explicaciones.»</p></blockquote>
+            <figcaption><strong>Ana Victoria H.</strong><span>Déficit de hierro · Opinión en Doctoralia</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Una de las mejores profesionales que he conocido. Dedicación y amor a su trabajo.»</p></blockquote>
+            <figcaption><strong>J. López</strong><span>Primera visita · Opinión en Doctoralia</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Nos lo explicó todo muy claro y nos dio un material súper útil. Todo totalmente actualizado. […] Muy contentos de que haya nutricionistas así en Jaén.»</p></blockquote>
+            <figcaption><strong>Alfonso</strong><span>Alimentación complementaria (BLW) · Opinión en Doctoralia</span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote><p>«Gran profesional con empatía y amabilidad. Tratamiento detallado. Muy recomendable»</p></blockquote>
+            <figcaption><strong>Inés R.</strong><span>Problemas digestivos · Opinión en Doctoralia</span></figcaption>
+          </figure>
+        </div>
+        <div class="carousel-nav">
+          <button type="button" class="carousel-btn" data-dir="-1" aria-label="Opinión anterior">←</button>
+          <span class="carousel-hint">Desliza para ver más opiniones</span>
+          <button type="button" class="carousel-btn" data-dir="1" aria-label="Siguiente opinión">→</button>
+        </div>
       </div>
     </div>
   </section>
@@ -541,6 +585,24 @@
     }, { threshold: 0.6 });
     seen.observe(stage);
   }
+})();
+// Carrusel de opiniones: se desliza con el dedo y con las flechas.
+(function () {
+  var c = document.getElementById('opiniones-carrusel');
+  if (!c) return;
+  var track = c.querySelector('.carousel-track');
+  var btns = c.querySelectorAll('.carousel-btn');
+  function step() { var card = track.querySelector('.review'); return card ? card.getBoundingClientRect().width + 16 : 300; }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { track.scrollBy({ left: step() * Number(b.dataset.dir), behavior: 'smooth' }); });
+  });
+  function update() {
+    btns[0].disabled = track.scrollLeft < 8;
+    btns[1].disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+  }
+  track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 </body>

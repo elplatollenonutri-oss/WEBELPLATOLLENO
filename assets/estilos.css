@@ -449,3 +449,21 @@ img { max-width: 100%; height: auto; }
   .flip-ready .flip-inner { transition: none; }
   .flip-ready.peek .flip-inner { animation: none; }
 }
+
+/* ===== Ilustraciones decorativas en los márgenes (suben al hacer scroll, como el aguacate) =====
+   Solo aparecen en pantallas anchas, en el hueco a los lados del contenido, para no tapar textos ni fotos. */
+.has-deco { position: relative; overflow-x: clip; }
+.has-deco > .wrap { position: relative; z-index: 1; }
+.deco {
+  --w: clamp(120px, 10vw, 170px); --py: 0px;
+  display: none; position: absolute; z-index: 0; top: 12%; width: var(--w); height: auto;
+  transform: translate3d(0, var(--py), 0) rotate(var(--rot, 0deg));
+  filter: drop-shadow(0 12px 18px rgba(46, 51, 25, .16)); pointer-events: none; will-change: transform;
+}
+.deco-left { left: calc((100vw - 1120px) / 2 - var(--w) - 12px); }
+.deco-right { right: calc((100vw - 1120px) / 2 - var(--w) - 12px); }
+@media (min-width: 1240px) {
+  .deco { display: block; }
+  .deco-left { left: max(-40px, calc((100vw - 1120px) / 2 - var(--w) - 12px)); }
+  .deco-right { right: max(-40px, calc((100vw - 1120px) / 2 - var(--w) - 12px)); }
+}

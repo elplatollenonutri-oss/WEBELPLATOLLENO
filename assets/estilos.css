@@ -138,7 +138,7 @@ img.photo { display: block; padding: 0; object-fit: cover; height: auto; }
 .tinted { background: var(--tint); }
 
 /* Para ti si */
-.foryou { display: grid; grid-template-columns: 1.2fr .8fr; gap: 3rem; align-items: start; }
+.foryou { display: grid; grid-template-columns: 1fr minmax(0, 1fr); gap: 3rem; align-items: start; }
 .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
 .checks li { display: grid; grid-template-columns: 26px 1fr; gap: .8rem; align-items: start; }
 .checks li::before {
@@ -602,3 +602,51 @@ nav ul { align-items: center; }
 .submenu a { display: block; padding: .6rem .8rem; border-radius: 10px; font-size: .95rem; }
 .submenu a:hover, .submenu a:focus-visible { background: var(--olive-soft); color: var(--olive); }
 .submenu li:last-child { border-top: 1px solid var(--line); margin-top: .3rem; padding-top: .3rem; }
+
+/* Recuadro verde de cifras: más aire para que no salten las líneas */
+.stats { padding: 2.2rem 2.4rem; gap: 1.8rem 2rem; }
+.stat strong { font-size: 1.7rem; white-space: nowrap; }
+.stat span { line-height: 1.4; }
+
+/* ===== Blog: imagen destacada, imágenes, palabras clave y categorías ===== */
+.tags-line { flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; padding-bottom: .2rem !important;
+  -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.tags-line::-webkit-scrollbar { display: none; }
+.tags-line li { white-space: nowrap; flex: none; }
+.post-cat { text-decoration: none; justify-self: start; }
+.post-cat:hover { text-decoration: underline; }
+.post-fig { margin: .6rem 0; display: grid; gap: .4rem; }
+.post-fig img { width: 100%; height: auto; border-radius: var(--radius); }
+.post-fig figcaption { font-size: .78rem; color: var(--muted); }
+.post-fig figcaption a { color: var(--muted); }
+.post-hero img { aspect-ratio: 16 / 9; object-fit: cover; }
+.cat-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .5rem; }
+.cat-chip { padding: .5em 1.1em; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 700; font-size: var(--step--1); transition: background .2s ease, color .2s ease; }
+.cat-chip:hover { border-color: var(--brand); }
+.cat-chip[aria-current="true"] { background: var(--olive); border-color: var(--olive); color: var(--on-olive); }
+.post-card { overflow: hidden; }
+.post-card-img { display: block; width: calc(100% + 3.2rem); max-width: none; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin: -1.6rem -1.6rem .4rem; }
+.post-card[hidden] { display: none; }
+.cat-empty { color: var(--muted); }
+
+/* ===== Desplazamiento suave y transición suave entre páginas ===== */
+html { scroll-behavior: smooth; }
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .45s; animation-timing-function: cubic-bezier(.2, .65, .25, 1); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  @view-transition { navigation: none; }
+}
+.article .tags-line { display: flex; gap: .45rem; }
+/* Bonos: temario genérico y nota de seguimiento adicional */
+.temario-intro { font-weight: 700; font-size: .95rem; }
+.temario-generic { list-style: none; padding-left: 0 !important; display: grid; gap: .35rem; }
+.temario-generic li { padding-left: 1.4rem; position: relative; }
+.temario-generic li::before { content: "✓"; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+.temario-more { font-size: var(--step--1); color: var(--muted); font-style: italic; }
+.bono-extra { font-size: var(--step--1); color: var(--muted); padding: .6rem .8rem; border-radius: 10px; background: var(--tint); }
+/* Bonos en columna flexible: el botón siempre abajo, sin depender del número de bloques */
+.bono, .bono.has-img { display: flex; flex-direction: column; gap: .7rem; }
+.bono > * { flex: none; }
+.bono .btn { align-self: flex-start; margin-top: auto; }
+.bono-tag { align-self: flex-start; }

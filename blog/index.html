@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="../assets/estilos.css?v=20261111b">
+<link rel="stylesheet" href="../assets/estilos.css?v=20261111e">
 <script src="../assets/menu.js?v=20261111b" defer></script>
 </head>
 <body>
@@ -55,16 +55,26 @@
 
   <section class="section">
     <div class="wrap">
-      <!-- Artículos: el más reciente primero. Para añadir uno, copia un <a class="post-card"> y cambia el enlace, el título, la fecha y el resumen. -->
+      <!-- Categorías: cada botón filtra por data-cat. Para añadir una, copia un <a class="cat-chip"> con su #id. -->
+      <nav class="cat-chips" aria-label="Categorías del blog">
+        <a class="cat-chip" href="#todas" data-cat="todas">Todas</a>
+        <a class="cat-chip" href="#digestivo" data-cat="digestivo">Digestivo</a>
+        <a class="cat-chip" href="#oncologia" data-cat="oncologia">Oncología</a>
+        <a class="cat-chip" href="#nutricion-general" data-cat="nutricion-general">Nutrición general</a>
+        <a class="cat-chip" href="#complementaria" data-cat="complementaria">Alimentación complementaria</a>
+      </nav>
+      <!-- Artículos: el más reciente primero. Para añadir uno, copia un <a class="post-card"> y cambia data-cat, la imagen, el enlace, el título, la fecha y el resumen. -->
       <div class="post-list">
-        <a class="post-card" href="colon-irritable-que-comer/">
-          <span class="eyebrow">Salud digestiva</span>
+        <a class="post-card" href="colon-irritable-que-comer/" data-cat="digestivo">
+          <img class="post-card-img" src="../assets/blog/colon-irritable-destacada.webp" alt="" width="1400" height="788" loading="lazy">
+          <span class="eyebrow">Digestivo</span>
           <h2>Colon irritable: qué comer y cómo aliviar los síntomas</h2>
           <p>Dieta baja en FODMAP, el tipo de fibra que sí ayuda y los hábitos que alivian la hinchazón, según las guías clínicas actuales.</p>
           <span class="post-meta">5 de noviembre de 2026 · 7 min de lectura</span>
           <span class="post-more">Leer artículo →</span>
         </a>
       </div>
+      <p class="cat-empty" hidden>Todavía no hay artículos en esta categoría. ¡Muy pronto!</p>
     </div>
   </section>
 </main>
@@ -80,5 +90,23 @@
     </ul>
   </div>
 </footer>
+<script>
+// Filtro por categorías del blog (usa el #categoría de la dirección para poder enlazarlas)
+(function () {
+  var chips = [].slice.call(document.querySelectorAll('.cat-chip'));
+  var cards = [].slice.call(document.querySelectorAll('.post-card'));
+  var empty = document.querySelector('.cat-empty');
+  function apply() {
+    var cat = (location.hash || '#todas').slice(1);
+    if (!chips.some(function (c) { return c.dataset.cat === cat; })) cat = 'todas';
+    var shown = 0;
+    cards.forEach(function (c) { var ok = cat === 'todas' || c.dataset.cat === cat; c.hidden = !ok; if (ok) shown++; });
+    chips.forEach(function (c) { c.setAttribute('aria-current', c.dataset.cat === cat ? 'true' : 'false'); });
+    if (empty) empty.hidden = shown > 0;
+  }
+  window.addEventListener('hashchange', apply);
+  apply();
+})();
+</script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="../../assets/estilos.css?v=20261111b">
+<link rel="stylesheet" href="../../assets/estilos.css?v=20261111e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,11 +83,15 @@
     <article class="article">
       <!-- 1. Miga de pan: cambia el último texto por el tema corto del artículo -->
       <nav class="breadcrumbs" aria-label="Estás aquí"><a href="../../">Inicio</a> › <a href="../">Blog</a> › TEMA CORTO</nav>
-      <span class="eyebrow">CATEGORÍA</span>
+      <!-- Categoría: digestivo · oncologia · nutricion-general · complementaria (el mismo valor que data-cat en blog/index.html) -->
+      <a class="eyebrow post-cat" href="../#CATEGORIA">NOMBRE CATEGORÍA</a>
       <!-- 2. H1: el título, con la palabra clave principal al principio. Solo un H1 por artículo -->
       <h1>TÍTULO DEL ARTÍCULO</h1>
       <p class="post-meta">Por <a href="../../#sobre-mi">Isabel Lara</a>, dietista-nutricionista en Jaén · FECHA · X min de lectura</p>
-      <ul class="tags" aria-label="Temas"><li>ETIQUETA 1</li><li>ETIQUETA 2</li><li>Nutricionista en Jaén</li></ul>
+      <!-- Las 5-10 palabras clave, en burbujas en una sola línea -->
+      <ul class="tags tags-line" aria-label="Palabras clave"><li>PALABRA CLAVE 1</li><li>PALABRA CLAVE 2</li><li>Nutricionista en Jaén</li></ul>
+      <!-- Imagen destacada (16:9, en assets/blog/). Si es de Unsplash, deja el crédito. -->
+      <figure class="post-fig post-hero"><img src="../../assets/blog/URL-DEL-ARTICULO-destacada.webp" alt="DESCRIPCIÓN" width="1400" height="788"><figcaption>Foto: <a href="https://unsplash.com/es/fotos/ID" target="_blank" rel="noopener nofollow">AUTOR</a> en Unsplash</figcaption></figure>
 
       <!-- 3. Entradilla: 2-4 frases con la palabra clave principal en las primeras 100 palabras -->
       <p class="lead">ENTRADILLA</p>
@@ -102,6 +106,8 @@
 
       <!-- 4. Cuerpo: 1.200-1.500 palabras en secciones H2 (y H3 si hace falta). Cita con <sup><a href="#ref-1">1</a></sup> -->
       <h2 id="seccion-1">SECCIÓN 1</h2>
+      <!-- 2 o 3 imágenes dentro del artículo (4:3), repartidas entre secciones -->
+      <figure class="post-fig"><img src="../../assets/blog/URL-DEL-ARTICULO-1.webp" alt="DESCRIPCIÓN" width="1000" height="750" loading="lazy"><figcaption>Foto: <a href="https://unsplash.com/es/fotos/ID" target="_blank" rel="noopener nofollow">AUTOR</a> en Unsplash</figcaption></figure>
       <p>TEXTO<sup><a href="#ref-1">1</a></sup>.</p>
 
       <!-- 5. Cierre local: menciona Jaén y enlaza a servicios o reserva -->

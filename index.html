@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261111b">
+<link rel="stylesheet" href="assets/estilos.css?v=20261111e">
 <script>
   // Aparición suave al hacer scroll: se activa antes de pintar para que no haya parpadeo.
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rv');
@@ -86,7 +86,7 @@
       </div>
       <aside class="stats" aria-label="El Plato Lleno en cifras">
         <p class="quote">«Que aprendas a comer sin depender de mí»</p>
-        <div class="stat"><strong>2</strong><span>Grados: Farmacia y Nutrición</span></div>
+        <div class="stat"><strong>2 grados</strong><span>Farmacia y Nutrición</span></div>
         <div class="stat"><strong>Especialidad</strong><span>Digestivo y oncología</span></div>
         <div class="stat"><strong>Online</strong><span>Estés donde estés</span></div>
         <div class="stat"><strong>Presencial</strong><span>Paseo de la Estación, 23 · Jaén</span></div>
@@ -262,6 +262,7 @@
             <li>Tus menús personalizados y la guía de raciones con medidas caseras</li>
             <li>Todos los materiales y herramientas que necesites</li>
           </ul>
+          <p class="bono-extra">Al terminar el bono, cada seguimiento adicional es de 45 € la sesión.</p>
           <p class="bono-fit">Para cualquiera que quiera empezar acompañado de principio a fin.</p>
           <a class="btn small" href="#reserva">Reservar</a>
         </article>
@@ -272,18 +273,14 @@
           <h3>Bono 10 sesiones</h3>
           <p class="bono-sub">¿Te interesa la nutrición pero cada día lees una cosa distinta? Esto es lo más parecido a un minicurso, a tu ritmo, resolviendo tus dudas y con materiales prácticos.</p>
           <p class="price">400 €<small>10 sesiones · 40 € cada una</small></p>
-          <ol class="temario">
-            <li>¿De dónde partimos? Primera consulta y tu menú</li>
+          <p class="temario-intro">Algunos de los temas que trabajamos:</p>
+          <ul class="temario temario-generic">
             <li>¿Cómo se monta un plato completo?</li>
-            <li>¿Cuánta proteína necesitas de verdad?</li>
-            <li>¿Tomas suficiente fibra?</li>
-            <li>¿Los hidratos engordan? Hidratos y grasas sin miedo</li>
-            <li>¿Sabes lo que compras? Aprende a leer etiquetas</li>
-            <li>¿Se puede recalentar el arroz? Cocina segura en casa</li>
-            <li>¿Sin tiempo para cocinar? Cocina rápida y despensa</li>
-            <li>¿Qué ceno hoy? Tu recetario</li>
-            <li>¿Y ahora qué? Tu propio menú, sin depender de nadie</li>
-          </ol>
+            <li>Los nutrientes, sin mitos ni miedos</li>
+            <li>¿Sabes lo que compras? El supermercado y las etiquetas</li>
+            <li>Cocina fácil y organizada para el día a día</li>
+          </ul>
+          <p class="temario-more">…y mucho más, siempre a tu ritmo y resolviendo tus dudas.</p>
           <p class="bono-fit">La opción perfecta si quieres llegar a la cena de Navidad con argumentos… y no pelearte con el cuñado de turno.</p>
           <a class="btn small" href="#reserva">Reservar</a>
         </article>

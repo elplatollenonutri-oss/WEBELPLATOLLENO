@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261109f">
+<link rel="stylesheet" href="assets/estilos.css?v=20261110b">
 </head>
 <body>
 <div class="proto"><div class="wrap">Prototipo · fotos, reseñas y enlaces provisionales</div></div>
@@ -111,8 +111,7 @@
     </div>
   </section>
 
-  <section class="section tinted has-deco" id="enfoque" aria-labelledby="enfoque-t">
-    <img class="deco deco-right" src="assets/deco/aceite.webp" alt="" aria-hidden="true" width="420" height="768" loading="lazy" data-parallax="0.22" style="--rot: -8deg">
+  <section class="section tinted" id="enfoque" aria-labelledby="enfoque-t">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Mi enfoque</span>
@@ -137,6 +136,7 @@
           <div class="tl-card"><span class="tl-when">Cuando llegue el momento</span><h3>Autonomía</h3><p>Alta planificada cuando ya organizas tu alimentación por tu cuenta, con revisiones opcionales si las necesitas.</p></div>
         </li>
       </ol>
+      <div class="tl-end"><img class="deco-in deco-aceite" src="assets/deco/aceite.webp" alt="" aria-hidden="true" width="420" height="768" loading="lazy" data-parallax="0.12" style="--rot: -6deg"></div>
       <!-- Tarjeta que gira: cara delantera "Lo que sí hago", trasera "Lo que no hago". Sin JavaScript se ven las dos una al lado de otra. -->
       <div class="yesno flip" id="flip">
         <div class="flip-tabs" role="tablist" aria-label="Mi enfoque">
@@ -172,8 +172,7 @@
     </div>
   </section>
 
-  <section class="section has-deco" id="servicios" aria-labelledby="servicios-t">
-    <img class="deco deco-left" src="assets/deco/habas.webp" alt="" aria-hidden="true" width="420" height="325" loading="lazy" data-parallax="0.28" style="--rot: 12deg">
+  <section class="section" id="servicios" aria-labelledby="servicios-t">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Servicios</span>
@@ -181,6 +180,7 @@
       </div>
       <div class="services">
         <article class="service main">
+          <img class="deco-in deco-corner deco-habas" src="assets/deco/habas.webp" alt="" aria-hidden="true" width="420" height="325" loading="lazy" data-parallax="0.06" style="--rot: 14deg">
           <img class="service-img" src="assets/fotos/ensalada-espinacas.webp" alt="Ensalada de espinacas con manzana, queso y anacardos" width="900" height="675" loading="lazy">
           <span class="tag">Especialidad</span>
           <h3>Programa digestivo</h3>
@@ -234,8 +234,7 @@
     </div>
   </section>
 
-  <section class="section band has-deco" id="bonos" aria-labelledby="bonos-t">
-    <img class="deco deco-right" src="assets/deco/avena.webp" alt="" aria-hidden="true" width="420" height="328" loading="lazy" data-parallax="0.2" style="--rot: -6deg">
+  <section class="section band" id="bonos" aria-labelledby="bonos-t">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Bonos</span>
@@ -259,6 +258,7 @@
           <a class="btn small" href="#reserva">Reservar</a>
         </article>
         <article class="bono has-img">
+          <img class="deco-in deco-corner deco-avena" src="assets/deco/avena.webp" alt="" aria-hidden="true" width="420" height="328" loading="lazy" data-parallax="0.06" style="--rot: -8deg">
           <img class="bono-img" src="assets/fotos/cartas-raciones.webp" alt="Cartas educativas de raciones de El Plato Lleno sobre la mesa de consulta" width="900" height="675" loading="lazy">
           <span class="bono-tag">Tu minicurso de nutrición</span>
           <h3>Bono 10 sesiones</h3>
@@ -381,8 +381,7 @@
     </div>
   </section>
 
-  <section class="section has-deco" id="cocina" aria-labelledby="cocina-t">
-    <img class="deco deco-left" src="assets/deco/donut.webp" alt="" aria-hidden="true" width="420" height="419" loading="lazy" data-parallax="0.3" style="--rot: 14deg">
+  <section class="section" id="cocina" aria-labelledby="cocina-t">
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">En Instagram</span>
@@ -390,6 +389,8 @@
         <p class="lead">En @el_plato_lleno comparto consejos prácticos, desmonto bulos sobre alimentación, hablo de salud digestiva y, de vez en cuando, alguna idea de plato sencillo y sin alimentos prohibidos.</p>
       </div>
       <!-- Feed de Instagram de Behold (se actualiza solo). Código copiado del panel de Behold. -->
+      <div class="ig-feed-wrap">
+        <img class="deco-in deco-corner deco-donut" src="assets/deco/donut.webp" alt="" aria-hidden="true" width="420" height="419" loading="lazy" data-parallax="0.06" style="--rot: 12deg">
       <div class="ig-feed">
         <behold-widget feed-id="7qd6UFl9xbzGeduHRUg4"></behold-widget>
         <script>
@@ -399,6 +400,7 @@
             s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
           })();
         </script>
+      </div>
       </div>
       <div class="row ig-cta"><a class="btn" href="https://www.instagram.com/el_plato_lleno/" target="_blank" rel="noopener">Sígueme en Instagram · @el_plato_lleno</a></div>
     </div>

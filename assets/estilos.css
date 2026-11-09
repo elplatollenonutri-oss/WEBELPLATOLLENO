@@ -503,17 +503,17 @@ img { max-width: 100%; height: auto; }
   transform: translate3d(0, var(--py), 0) rotate(var(--rot, 0deg));
   filter: drop-shadow(0 10px 16px rgba(46, 51, 25, .2));
 }
-.deco-corner { width: clamp(80px, 8vw, 120px); top: -52px; right: -18px; }
-.deco-habas { width: clamp(88px, 9vw, 132px); top: -46px; right: -22px; }
-.deco-donut { top: -56px; right: -14px; }
+.deco-corner { width: clamp(96px, 11vw, 150px); top: -64px; right: -22px; }
+.deco-habas { width: clamp(100px, 11.5vw, 156px); top: -58px; right: -26px; }
+.deco-donut { top: -70px; right: -18px; }
 /* Aceite: al final de la línea del tiempo, como punto de llegada */
-.tl-end { position: relative; display: grid; justify-items: center; margin-top: -.5rem; height: clamp(110px, 12vw, 160px); }
-.deco-aceite { position: relative; width: clamp(64px, 6vw, 88px); }
+.tl-end { position: relative; display: grid; justify-items: center; margin-top: -.5rem; height: clamp(160px, 17vw, 230px); }
+.deco-aceite { position: relative; width: clamp(84px, 8.5vw, 118px); }
 .ig-feed-wrap { position: relative; min-width: 0; }
 @media (max-width: 760px) {
   .tl-end { justify-items: start; }
-  .deco-aceite { margin-left: calc(1.5rem - 32px); }
-  .deco-corner { right: -6px; top: -26px; }
+  .deco-aceite { margin-left: calc(1.5rem - 42px); }
+  .deco-corner { right: -6px; top: -48px; }
 }
 
 /* ===== Aparición suave al hacer scroll =====

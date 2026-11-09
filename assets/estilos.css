@@ -475,8 +475,12 @@ img { max-width: 100%; height: auto; }
 .talk-topics li { font-size: var(--step--1); font-weight: 700; color: var(--olive); background: var(--olive-soft); border-radius: 999px; padding: .35em .9em; }
 .talk-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; min-width: 0; }
 .talk-photos > :first-child { grid-column: 1 / -1; }
-.talk-photo { margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
+.talk-photo { margin: 0; position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; }
 .talk-photos > :first-child.talk-photo { aspect-ratio: 16 / 9; }
 .talk-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.talk-photo figcaption {
+  position: absolute; left: .7rem; right: .7rem; bottom: .7rem; justify-self: start; width: fit-content; max-width: calc(100% - 1.4rem);
+  padding: .3em .8em; border-radius: 999px; background: rgba(255, 255, 255, .9); color: #1D261C; font-size: .8rem; font-weight: 700;
+}
 .talk-photo.empty { display: grid; place-items: center; border: 2px dashed var(--line); color: var(--muted); font-size: var(--step--1); text-align: center; padding: 1rem; }
 @media (max-width: 860px) { .talks { grid-template-columns: 1fr; } }

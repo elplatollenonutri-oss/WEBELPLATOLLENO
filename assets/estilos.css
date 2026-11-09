@@ -484,3 +484,11 @@ img { max-width: 100%; height: auto; }
 }
 .talk-photo.empty { display: grid; place-items: center; border: 2px dashed var(--line); color: var(--muted); font-size: var(--step--1); text-align: center; padding: 1rem; }
 @media (max-width: 860px) { .talks { grid-template-columns: 1fr; } }
+
+/* Bonos con precio definido y fotos */
+.price small { display: block; font-family: var(--font-body); font-size: var(--step--1); font-weight: 400; color: var(--muted); margin-top: .2rem; }
+.temario { columns: 1; padding-left: 1.4rem; }
+.temario li { padding-block: .15rem; }
+.sueltas.has-img { overflow: hidden; }
+.sueltas-img { display: block; width: calc(100% + 2.8rem); max-width: none; height: auto; aspect-ratio: 4 / 3; object-fit: cover; margin: -1.4rem -1.4rem .2rem; }
+.sueltas dd { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; }

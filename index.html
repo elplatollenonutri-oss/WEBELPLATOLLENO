@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261109e">
+<link rel="stylesheet" href="assets/estilos.css?v=20261109f">
 </head>
 <body>
 <div class="proto"><div class="wrap">Prototipo · fotos, reseñas y enlaces provisionales</div></div>
@@ -389,15 +389,18 @@
         <h2 id="cocina-t">Nutrición fiable <span class="accent">para tu día a día</span></h2>
         <p class="lead">En @el_plato_lleno comparto consejos prácticos, desmonto bulos sobre alimentación, hablo de salud digestiva y, de vez en cuando, alguna idea de plato sencillo y sin alimentos prohibidos.</p>
       </div>
-      <div class="gallery">
-        <figure><img src="assets/fotos/bowl-platano.webp" alt="Bol de yogur con plátano, nueces, cereales y crema de cacahuete" width="700" height="700" loading="lazy"><figcaption>Ideas de desayuno</figcaption></figure>
-        <figure><img src="assets/fotos/polo-sandia.webp" alt="Polo casero de sandía en un molde infantil" width="700" height="700" loading="lazy"><figcaption>Alimentación en familia</figcaption></figure>
-        <a class="gallery-ig" href="https://www.instagram.com/el_plato_lleno/" target="_blank" rel="noopener">
-          <span class="accent">Consejos, bulos y más</span>
-          <strong>@el_plato_lleno</strong>
-          <span>Sígueme en Instagram →</span>
-        </a>
+      <!-- Feed de Instagram de Behold (se actualiza solo). Código copiado del panel de Behold. -->
+      <div class="ig-feed">
+        <behold-widget feed-id="7qd6UFl9xbzGeduHRUg4"></behold-widget>
+        <script>
+          (() => {
+            if(window.__bhldScript)return;window.__bhldScript=true;
+            const d=document,s=d.createElement("script");s.type="module";
+            s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+          })();
+        </script>
       </div>
+      <div class="row ig-cta"><a class="btn" href="https://www.instagram.com/el_plato_lleno/" target="_blank" rel="noopener">Sígueme en Instagram · @el_plato_lleno</a></div>
     </div>
   </section>
 

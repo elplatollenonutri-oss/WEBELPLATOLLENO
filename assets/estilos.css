@@ -313,7 +313,9 @@ img.photo { display: block; padding: 0; object-fit: cover; height: auto; }
 
 /* Contacto */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 1.6rem; min-width: 0; }
-.contact-grid span { overflow-wrap: anywhere; }
+.contact-grid span { overflow-wrap: break-word; }
+.contact-wide { grid-column: 1 / -1; }
+.nobreak { white-space: nowrap; }
 .on-olive-link { color: var(--on-olive); font-weight: 700; }
 @media (max-width: 480px) { .contact-grid { grid-template-columns: 1fr; } }
 

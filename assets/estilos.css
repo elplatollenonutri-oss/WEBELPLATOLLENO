@@ -515,3 +515,20 @@ img { max-width: 100%; height: auto; }
   .deco-aceite { margin-left: calc(1.5rem - 32px); }
   .deco-corner { right: -6px; top: -26px; }
 }
+
+/* ===== Aparición suave al hacer scroll =====
+   Solo si el navegador lo admite y la persona no ha pedido reducir el movimiento (clase .rv en <html>).
+   Usa opacity + translate (no transform) para no chocar con otros efectos. */
+.rv :is(.section-head, .checks li, .foryou-note, .stats, .about-visual, .about-text > *, .flip, .service, .bono, .sueltas, .modality, .talks-text > *, .talk-photo, .reviews-head, .carousel, .ig-feed-wrap, .ig-cta, .faq details, .booking-text > *, .widget, .cta-band .wrap > *) {
+  opacity: 0; translate: 0 26px;
+  transition: opacity .9s cubic-bezier(.2, .65, .25, 1) var(--rv-d, 0ms), translate .9s cubic-bezier(.2, .65, .25, 1) var(--rv-d, 0ms);
+}
+.rv :is(.section-head, .checks li, .foryou-note, .stats, .about-visual, .about-text > *, .flip, .service, .bono, .sueltas, .modality, .talks-text > *, .talk-photo, .reviews-head, .carousel, .ig-feed-wrap, .ig-cta, .faq details, .booking-text > *, .widget, .cta-band .wrap > *).in { opacity: 1; translate: 0 0; }
+
+/* Portada: entra sola al cargar, escalonada */
+@keyframes rv-up { from { opacity: 0; translate: 0 22px; } to { opacity: 1; translate: 0 0; } }
+.rv .hero-text > *, .rv .hero-visual { animation: rv-up 1s cubic-bezier(.2, .65, .25, 1) both; }
+.rv .hero-text > :nth-child(2) { animation-delay: .1s; }
+.rv .hero-text > :nth-child(3) { animation-delay: .2s; }
+.rv .hero-text > :nth-child(4) { animation-delay: .3s; }
+.rv .hero-visual { animation-delay: .25s; }

@@ -12,7 +12,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261110b">
+<link rel="stylesheet" href="assets/estilos.css?v=20261110d">
+<script>
+  // Aparición suave al hacer scroll: se activa antes de pintar para que no haya parpadeo.
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rv');
+</script>
 </head>
 <body>
 <div class="proto"><div class="wrap">Prototipo · fotos, reseñas y enlaces provisionales</div></div>
@@ -645,6 +649,24 @@
   track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
   window.addEventListener('resize', update);
   update();
+})();
+// Aparición suave de los bloques al entrar en pantalla (con un pequeño escalonado entre hermanos).
+(function () {
+  if (!document.documentElement.classList.contains('rv')) return;
+  var els = [].slice.call(document.querySelectorAll('.section-head, .checks li, .foryou-note, .stats, .about-visual, .about-text > *, .flip, .service, .bono, .sueltas, .modality, .talks-text > *, .talk-photo, .reviews-head, .carousel, .ig-feed-wrap, .ig-cta, .faq details, .booking-text > *, .widget, .cta-band .wrap > *'));
+  els.forEach(function (el) {
+    var sibs = [].slice.call(el.parentElement.children).filter(function (c) { return els.indexOf(c) !== -1; });
+    var i = sibs.indexOf(el);
+    el.style.setProperty('--rv-d', Math.min(i, 5) * 90 + 'ms');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
+  // Lo que ya está en pantalla al cargar aparece enseguida, sin esperar al observador.
+  requestAnimationFrame(function () { els.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight * 0.92) el.classList.add('in'); }); });
+  // Red de seguridad: si algo no llegara a observarse, que se vea igualmente.
+  setTimeout(function () { els.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('in'); }); }, 2500);
 })();
 </script>
 </body>

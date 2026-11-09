@@ -12,11 +12,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261111">
+<link rel="stylesheet" href="assets/estilos.css?v=20261111b">
 <script>
   // Aparición suave al hacer scroll: se activa antes de pintar para que no haya parpadeo.
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rv');
 </script>
+<script src="assets/menu.js?v=20261111b" defer></script>
 </head>
 <body>
 
@@ -28,14 +29,18 @@
     </a>
     <nav aria-label="Principal">
       <ul>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#enfoque">Cómo trabajo</a></li>
-        <li><a href="#servicios">Servicios</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="menu-servicios">Servicios</button>
+          <ul class="submenu" id="menu-servicios">
+          <li><a href="servicios/programa-digestivo/">Programa digestivo</a></li>
+          <li><a href="servicios/nutricion-oncologica/">Nutrición oncológica</a></li>
+          <li><a href="servicios/alimentacion-complementaria-blw/">Alimentación complementaria y BLW</a></li>
+          <li><a href="servicios/habitos-saludables/">Hábitos saludables</a></li>
+          <li><a href="servicios/charlas-y-talleres/">Charlas y talleres</a></li>
+          </ul>
+        </li>
         <li><a href="#bonos">Bonos</a></li>
-        <li><a href="#charlas">Talleres</a></li>
-        <li><a href="#preguntas">Preguntas</a></li>
-        <li><a href="blog/">Blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
     <a class="btn small" href="#reserva">Pedir cita</a>
@@ -310,7 +315,7 @@
           <li>Desmontando bulos de alimentación</li>
         </ul>
         <p>Presenciales en Jaén y provincia, u online. Cuéntame qué necesitas y lo preparamos a medida.</p>
-        <div class="row"><a class="btn" href="#contacto">Quiero una charla o taller</a></div>
+        <div class="row"><a class="btn" href="servicios/charlas-y-talleres/">Ver más sobre charlas y talleres</a><a class="btn ghost" href="#contacto">Pedir presupuesto</a></div>
       </div>
       <div class="talk-photos">
         <figure class="talk-photo"><img src="assets/fotos/charla-farmacia.webp" alt="Isabel Lara dando una charla sobre alimentación complementaria a un grupo de familias en una farmacia" width="1100" height="619" loading="lazy"><figcaption>Charla de alimentación complementaria para familias</figcaption></figure>
@@ -521,6 +526,7 @@
   <div class="wrap">
     <span>© 2026 El Plato Lleno · Isabel Lara Muñoz · Jaén<br>Centro sanitario autorizado · NICA 70578 · Colegiada CODINAN AND-01693</span>
     <ul>
+      <li><a href="blog/">Blog</a></li>
       <li><a href="#inicio">Aviso legal</a></li>
       <li><a href="#inicio">Privacidad</a></li>
       <li><a href="#inicio">Cookies</a></li>

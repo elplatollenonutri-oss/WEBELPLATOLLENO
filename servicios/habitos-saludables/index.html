@@ -17,10 +17,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="../../assets/estilos.css?v=20261111">
+<link rel="stylesheet" href="../../assets/estilos.css?v=20261111b">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Hábitos y composición corporal","description":"Aprende a comer mejor sin dietas ni báscula en cada consulta: menús de temporada, raciones con medidas caseras y herramientas para organizarte. Nutricionista en Jaén y online.","url":"https://elplatollenonutri-oss.github.io/WEBELPLATOLLENO/servicios/habitos-saludables/","areaServed":["Jaén","España"],"provider":{"@type":"MedicalBusiness","name":"El Plato Lleno · Isabel Lara Nutricionista","address":{"@type":"PostalAddress","streetAddress":"Paseo de la Estación, 23, Entreplanta C","postalCode":"23007","addressLocality":"Jaén","addressCountry":"ES"},"telephone":"+34640979514"}}
 </script>
+<script src="../../assets/menu.js?v=20261111b" defer></script>
 </head>
 <body>
 
@@ -32,11 +33,18 @@
     </a>
     <nav aria-label="Principal">
       <ul>
-        <li><a href="../../#sobre-mi">Sobre mí</a></li>
-        <li><a href="../../#servicios">Servicios</a></li>
+        <li><a href="../../#enfoque">Cómo trabajo</a></li>
+        <li class="has-sub">
+          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="menu-servicios">Servicios</button>
+          <ul class="submenu" id="menu-servicios">
+          <li><a href="../../servicios/programa-digestivo/">Programa digestivo</a></li>
+          <li><a href="../../servicios/nutricion-oncologica/">Nutrición oncológica</a></li>
+          <li><a href="../../servicios/alimentacion-complementaria-blw/">Alimentación complementaria y BLW</a></li>
+          <li><a href="../../servicios/habitos-saludables/">Hábitos saludables</a></li>
+          <li><a href="../../servicios/charlas-y-talleres/">Charlas y talleres</a></li>
+          </ul>
+        </li>
         <li><a href="../../#bonos">Bonos</a></li>
-        <li><a href="../../blog/">Blog</a></li>
-        <li><a href="../../#contacto">Contacto</a></li>
       </ul>
     </nav>
     <a class="btn small" href="../../#reserva">Pedir cita</a>
@@ -99,7 +107,7 @@
   <section class="section band">
     <div class="wrap">
       <div class="section-head"><span class="eyebrow">Otros servicios</span><h2>También te puedo ayudar con</h2></div>
-      <ul class="svc-others"><li><a href="../programa-digestivo/">Programa digestivo</a></li><li><a href="../nutricion-oncologica/">Nutrición oncológica</a></li><li><a href="../alimentacion-complementaria-blw/">Alimentación complementaria y BLW</a></li></ul>
+      <ul class="svc-others"><li><a href="../programa-digestivo/">Programa digestivo</a></li><li><a href="../nutricion-oncologica/">Nutrición oncológica</a></li><li><a href="../alimentacion-complementaria-blw/">Alimentación complementaria y BLW</a></li><li><a href="../charlas-y-talleres/">Charlas y talleres</a></li></ul>
     </div>
   </section>
 </main>
@@ -108,9 +116,10 @@
   <div class="wrap">
     <span>© 2026 El Plato Lleno · Isabel Lara Muñoz · Jaén<br>Centro sanitario autorizado · NICA 70578 · Colegiada CODINAN AND-01693</span>
     <ul>
-      <li><a href="../../">Inicio</a></li>
       <li><a href="../../blog/">Blog</a></li>
-      <li><a href="../../#contacto">Contacto</a></li>
+      <li><a href="../../#inicio">Aviso legal</a></li>
+      <li><a href="../../#inicio">Privacidad</a></li>
+      <li><a href="../../#inicio">Cookies</a></li>
     </ul>
   </div>
 </footer>

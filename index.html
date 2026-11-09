@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261111f">
+<link rel="stylesheet" href="assets/estilos.css?v=20261111h">
 <script>
   // Aparición suave al hacer scroll: se activa antes de pintar para que no haya parpadeo.
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rv');
@@ -280,18 +280,30 @@
             <li>¿Sabes lo que compras? El supermercado y las etiquetas</li>
             <li>Cocina fácil y organizada para el día a día</li>
           </ul>
-          <p class="temario-more">…y mucho más, siempre a tu ritmo y resolviendo tus dudas.</p>
           <p class="bono-fit">La opción perfecta si quieres llegar a la cena de Navidad con argumentos… y no pelearte con el cuñado de turno.</p>
           <a class="btn small" href="#reserva">Reservar</a>
         </article>
-        <aside class="sueltas has-img" aria-label="Consultas sueltas">
-          <img class="sueltas-img" src="assets/fotos/bowl-platano.webp" alt="Bol de yogur con plátano, nueces y crema de cacahuete" width="700" height="700" loading="lazy">
-          <h3>Consultas sueltas</h3>
-          <dl>
-            <dt>Primera consulta</dt><dd>55 €</dd>
-            <dt>Seguimiento</dt><dd>45 €</dd>
-          </dl>
-          <p>Pago por adelantado. Te explico cómo al reservar.</p>
+        <aside class="sueltas sueltas-wide" aria-labelledby="sueltas-t">
+          <img class="sueltas-photo" src="assets/fotos/bowl-platano.webp" alt="Bol de yogur con plátano, nueces y crema de cacahuete" width="700" height="700" loading="lazy">
+          <div class="sueltas-body">
+            <span class="bono-tag">Sin bonos ni compromiso</span>
+            <h3 id="sueltas-t">Consultas sueltas, <span class="accent">a tu ritmo</span></h3>
+            <p class="sueltas-lead">Si prefieres ir paso a paso, reserva cada consulta cuando la necesites.</p>
+            <div class="sueltas-cards">
+              <div class="suelta">
+                <span class="suelta-name">Primera consulta</span>
+                <span class="suelta-price">55 €</span>
+                <span class="suelta-time">1 hora · valoración completa y tu plan en 3 días como máximo</span>
+              </div>
+              <div class="suelta">
+                <span class="suelta-name">Consulta de seguimiento</span>
+                <span class="suelta-price">45 €</span>
+                <span class="suelta-time">30 minutos · revisamos avances y ajustamos tu plan</span>
+              </div>
+            </div>
+            <p class="sueltas-note">Pago por adelantado. Te explico cómo al reservar.</p>
+            <a class="btn small" href="#reserva">Reservar consulta</a>
+          </div>
         </aside>
       </div>
     </div>
@@ -383,6 +395,13 @@
           <button type="button" class="carousel-btn" data-dir="1" aria-label="Siguiente opinión">→</button>
         </div>
       </div>
+      <div class="review-cta">
+        <p><strong>Tu opinión importa.</strong> Si ya has pasado por consulta, me ayudas mucho contando tu experiencia.</p>
+        <div class="row">
+          <a class="btn" href="https://www.google.com/maps?cid=6121561630677330966" target="_blank" rel="noopener">Dejar mi reseña en Google</a>
+          <a class="btn ghost" href="https://www.doctoralia.es/perfil/isabel-lara-munoz" target="_blank" rel="noopener">Opinar en Doctoralia</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -421,46 +440,46 @@
       <div class="faq">
         <details>
           <summary>¿Cómo es la primera consulta?</summary>
-          <p>Dura aproximadamente una hora. Hacemos una entrevista completa sobre tus hábitos, estilo de vida, actividad física, gustos, objetivos y posibles patologías. Si vienes por un problema digestivo, también repasamos tus síntomas, tu medicación y las pruebas que te hayan hecho.</p>
-          <p>En un máximo de 3 días te envío todo lo que necesitas para empezar: tus pautas personalizadas, tu menú para dos semanas explicado paso a paso y la guía fotográfica de raciones con medidas caseras.</p>
+          <p>Dura aproximadamente una hora. Hacemos una entrevista completa sobre tus hábitos, estilo de vida, actividad física, gustos, objetivos y posibles patologías. Si vienes por un problema digestivo, también repasamos tus síntomas, tu medicación y las pruebas que te hayan hecho (más detalles en el <a href="servicios/programa-digestivo/">programa digestivo</a>).</p>
+          <p>En un máximo de 3 días te envío todo lo que necesitas para empezar: tus pautas personalizadas, tu menú para dos semanas explicado paso a paso y la guía fotográfica de raciones con medidas caseras. Puedes reservarla suelta o dentro del <a href="#bonos">Bono inicio</a>.</p>
         </details>
         <details>
           <summary>¿Qué tengo que llevar?</summary>
-          <p>Si tienes analíticas recientes, informes médicos o el listado de la medicación y los suplementos que tomas, tráelos o envíamelos antes. Me ayudan a valorar tu caso desde el primer día. Si no tienes nada, no pasa nada: empezamos igual.</p>
+          <p>Si tienes analíticas recientes, informes médicos o el listado de la medicación y los suplementos que tomas, tráelos o <a href="https://wa.me/34640979514?text=Hola%20Isabel%2C%20he%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20la%20consulta." target="_blank" rel="noopener">envíamelos antes por WhatsApp</a>. Me ayudan a valorar tu caso desde el primer día. Si no tienes nada, no pasa nada: empezamos igual.</p>
         </details>
         <details>
           <summary>¿Cómo son las consultas de seguimiento y cada cuánto son?</summary>
           <p>Duran unos 30 minutos. Revisamos tus avances, resolvemos dudas, trabajamos lo que te cueste y ajustamos los objetivos. Después de cada una recibes un menú nuevo para dos semanas y las herramientas de lo que estemos trabajando.</p>
-          <p>Al principio son cada 2 o 2 semanas y media. Cuando los hábitos se van consolidando, se espacian a una al mes o según lo que necesites.</p>
+          <p>Al principio son cada 2 o 2 semanas y media. Cuando los hábitos se van consolidando, se espacian a una al mes o según lo que necesites. Si quieres ahorrar, mira los <a href="#bonos">bonos</a>.</p>
         </details>
         <details>
           <summary>¿Me vas a pesar?</summary>
           <p><strong>No, pesarte no forma parte de mis consultas.</strong> La báscula solo aparece en casos muy concretos en los que de verdad aporta algo a tu salud, y siempre lo hablamos antes: si no quieres, no se usa.</p>
-          <p>Tu progreso lo medimos de otra forma: cómo te encuentras, tus síntomas, tu energía, tus hábitos y tu relación con la comida. Eso dice mucho más que un número.</p>
+          <p>Tu progreso lo medimos de otra forma: cómo te encuentras, tus síntomas, tu energía, tus hábitos y tu relación con la comida. Eso dice mucho más que un número. Te lo cuento con más calma en <a href="servicios/habitos-saludables/">hábitos saludables, sin dietas ni báscula</a>.</p>
         </details>
         <details>
           <summary>¿Me vas a quitar alimentos?</summary>
-          <p>No sin un motivo claro. En problemas digestivos a veces hace falta retirar algunos alimentos durante un tiempo, pero siempre con una pauta ordenada y con un plan para volver a introducirlos. El objetivo es que comas lo más variado posible.</p>
+          <p>No sin un motivo claro. En problemas digestivos a veces hace falta retirar algunos alimentos durante un tiempo, pero siempre con una pauta ordenada y con un plan para volver a introducirlos. El objetivo es que comas lo más variado posible. Si quieres saber cómo funciona, lee el artículo <a href="blog/colon-irritable-que-comer/">Colon irritable: qué comer y cómo aliviar los síntomas</a>.</p>
         </details>
         <details>
           <summary>¿Puedo hacer la consulta online?</summary>
-          <p>Sí. Las consultas online son por Google Meet y funcionan igual que las presenciales. Recibirás el enlace en cuanto se confirme la cita.</p>
+          <p>Sí. Las consultas online son por Google Meet y funcionan igual que las presenciales. Recibirás el enlace en cuanto se confirme la cita. Puedes <a href="#reserva">reservarla aquí</a> eligiendo la opción online.</p>
         </details>
         <details>
           <summary>¿Cómo se paga y cuándo queda confirmada la cita?</summary>
-          <p>El pago se hace por adelantado, de la sesión o del bono. Antes de la primera consulta también te enviaré un formulario para firmar el consentimiento de protección de datos. La cita queda confirmada cuando recibo el pago y el formulario.</p>
+          <p>El pago se hace por adelantado, de la sesión o del bono. Antes de la primera consulta también te enviaré un formulario para firmar el consentimiento de protección de datos. La cita queda confirmada cuando recibo el pago y el formulario. Consulta los <a href="#bonos">precios de las consultas y los bonos</a>.</p>
         </details>
         <details>
           <summary>¿Y si no puedo ir o llego tarde?</summary>
-          <p>Puedes cancelar o cambiar la cita avisando con al menos 24 horas de antelación. Si avisas más tarde o no vienes, te envío por correo el material preparado para esa sesión. Si llegas con retraso, hay un margen de cortesía de 10 a 15 minutos. Las situaciones excepcionales las valoramos en cada caso.</p>
+          <p>Puedes cancelar o cambiar la cita <a href="https://wa.me/34640979514?text=Hola%20Isabel%2C%20necesito%20cambiar%20mi%20cita." target="_blank" rel="noopener">avisándome por WhatsApp</a> con al menos 24 horas de antelación. Si avisas más tarde o no vienes, te envío por correo el material preparado para esa sesión. Si llegas con retraso, hay un margen de cortesía de 10 a 15 minutos. Las situaciones excepcionales las valoramos en cada caso.</p>
         </details>
         <details>
           <summary>¿Necesito que me derive un médico? ¿Lo cubre la Seguridad Social?</summary>
-          <p>No necesitas derivación: puedes pedir cita directamente. La consulta de nutrición no está cubierta por la sanidad pública. Si estás en tratamiento, tráeme tus informes y tendré en cuenta tu medicación y las indicaciones de tu médico.</p>
+          <p>No necesitas derivación: puedes <a href="#reserva">pedir cita directamente</a>. La consulta de nutrición no está cubierta por la sanidad pública. Si estás en tratamiento, tráeme tus informes y tendré en cuenta tu medicación y las indicaciones de tu médico (más información en <a href="servicios/nutricion-oncologica/">nutrición oncológica</a>).</p>
         </details>
         <details>
           <summary>¿Puedo venir acompañado?</summary>
-          <p>Sí. Puede venir contigo quien tú quieras, siempre que sea alguien que te aporte y te motive. A veces ayuda mucho, sobre todo si quien cocina en casa es otra persona.</p>
+          <p>Sí. Puede venir contigo quien tú quieras, siempre que sea alguien que te aporte y te motive. A veces ayuda mucho, sobre todo si quien cocina en casa es otra persona, como en la <a href="servicios/nutricion-oncologica/">nutrición oncológica</a> o la <a href="servicios/alimentacion-complementaria-blw/">alimentación complementaria</a>.</p>
           <p>Eso sí: si crees que va a cuestionarte, incomodarte o que no vas a poder hablar con libertad delante de esa persona, mejor que te espere fuera. Tenemos una sala de espera estupenda.</p>
         </details>
       </div>

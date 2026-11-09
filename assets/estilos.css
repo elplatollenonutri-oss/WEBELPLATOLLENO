@@ -239,7 +239,7 @@ img.photo { display: block; padding: 0; object-fit: cover; height: auto; }
 }
 
 /* Bonos */
-.bonos { display: grid; grid-template-columns: 1fr 1fr .8fr; gap: 1.2rem; align-items: stretch; }
+.bonos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: stretch; }
 .bono { display: grid; grid-template-rows: auto auto auto auto 1fr auto auto; gap: .7rem; padding: 1.8rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg); min-width: 0; }
 .bono.featured { border: 2px solid var(--brand); background: var(--surface); }
 .bono.has-img { grid-template-rows: auto auto auto auto auto 1fr auto auto; position: relative; }
@@ -652,3 +652,28 @@ html { scroll-behavior: smooth; }
 .bono > * { flex: none; }
 .bono .btn { align-self: flex-start; margin-top: auto; }
 .bono-tag { align-self: flex-start; }
+
+/* Consultas sueltas: tarjeta ancha debajo de los dos bonos */
+.sueltas-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 2fr); gap: 0; padding: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+.sueltas-photo { width: 100%; height: 100%; min-height: 220px; object-fit: cover; display: block; }
+.sueltas-body { display: flex; flex-direction: column; gap: .8rem; padding: 1.8rem; min-width: 0; }
+.sueltas-body h3 { font-size: 1.5rem; }
+.sueltas-lead { color: var(--muted); }
+.sueltas-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.suelta { display: grid; gap: .25rem; padding: 1rem 1.2rem; border-radius: var(--radius); background: var(--tint); min-width: 0; }
+.suelta-name { font-weight: 700; }
+.suelta-price { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; line-height: 1.1; }
+.suelta-time { font-size: var(--step--1); color: var(--muted); }
+.sueltas-note { font-size: var(--step--1); color: var(--muted); }
+.sueltas-body .btn { align-self: flex-start; }
+@media (max-width: 760px) {
+  .sueltas-wide { grid-template-columns: 1fr; }
+  .sueltas-photo { aspect-ratio: 16 / 9; min-height: 0; height: auto; }
+  .sueltas-cards { grid-template-columns: 1fr; }
+}
+
+/* Llamada a dejar reseña bajo el carrusel */
+.review-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding: 1.4rem 1.6rem; border-radius: var(--radius); background: var(--surface); border: 1px dashed var(--brand); }
+.review-cta p { max-width: 52ch; color: var(--muted); }
+.review-cta strong { color: var(--ink); font-family: var(--font-display); font-size: 1.1rem; }
+.faq details p a { color: var(--olive); font-weight: 600; }

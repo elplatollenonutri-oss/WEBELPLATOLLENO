@@ -564,6 +564,27 @@ img { max-width: 100%; height: auto; }
 }
 .mock:hover img { transform: rotate(0deg) scale(1.03); }
 .mock figcaption { font-size: var(--step--1); color: var(--muted); text-align: center; }
+/* Portadas del material (cuadernillos con el estilo de la web; colores fijos para que parezcan papel también en modo oscuro) */
+.cover-mock { perspective: 900px; }
+.cover {
+  --band: #5C6828; --paper: #FDFCF7; --ink-c: #1D261C;
+  position: relative; width: min(100%, 240px); aspect-ratio: 210 / 297; display: flex; flex-direction: column; align-items: center;
+  background: var(--paper); color: var(--ink-c); border-radius: 4px 10px 10px 4px; overflow: hidden; text-align: center;
+  transform: rotate(var(--r, 0deg)); transition: transform .4s ease;
+  box-shadow: 5px 5px 0 -1px #EEEBDF, 5px 5px 0 0 #D9D5C6, 10px 10px 0 -1px #E7E3D4, 10px 10px 0 0 #D2CEBE,
+              0 22px 36px -14px rgba(29, 38, 28, .5);
+}
+.cover::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9px; background: linear-gradient(90deg, rgba(0,0,0,.12), rgba(0,0,0,0)); z-index: 1; }
+.cover-berry { --band: #5A4A8C; }
+.cover-grain { --band: #A9822C; }
+.cover-band { width: 100%; background: var(--band); padding: .9rem 1rem 1.4rem; clip-path: ellipse(80% 100% at 50% 0); }
+.cover-kind { font-family: var(--font-display); font-weight: 700; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: #fff; }
+.mock .cover-ill, .mock:hover .cover-ill { width: auto; max-width: 62%; height: 36%; max-height: none; object-fit: contain; margin: .9rem 0 .5rem; padding: 0; background: none; border-radius: 0; box-shadow: none; transform: none; filter: drop-shadow(0 6px 8px rgba(29, 38, 28, .15)); }
+.cover-title { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; line-height: 1.1; padding: 0 1rem; color: var(--band); }
+.cover-sub { font-family: var(--font-accent); font-style: italic; font-size: 1.1rem; margin-top: .3rem; padding: 0 1rem; color: #566252; }
+.cover-foot { margin-top: auto; width: 100%; padding: .7rem .5rem; border-top: 1px solid #E4E1D3; font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: #7A8473; }
+.cover-mock:hover .cover { transform: rotate(0deg) translateY(-6px); }
+.cover-mock figcaption { max-width: 260px; margin-top: .6rem; }
 .svc-extra { margin: 1rem 0 0; display: grid; gap: .5rem; max-width: 560px; }
 .svc-extra img { width: 100%; height: auto; border-radius: var(--radius); }
 .svc-extra figcaption { font-family: var(--font-accent); font-style: italic; color: var(--olive); font-size: 1.1rem; }

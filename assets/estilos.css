@@ -712,3 +712,7 @@ html { scroll-behavior: smooth; }
 .legal ul { padding-left: 1.2em; }
 .legal li { margin: .35em 0; }
 .cookie-gate:not([hidden]) ~ .zl-url { display: none; }
+.cookie-prefs { display: grid; gap: .5rem; max-height: 45vh; overflow-y: auto; }
+.cookie-prefs[hidden] { display: none; }
+.cookie-opt { display: flex; gap: .6rem; align-items: flex-start; line-height: 1.4; }
+.cookie-opt input { margin-top: .2em; accent-color: var(--olive); flex: none; }

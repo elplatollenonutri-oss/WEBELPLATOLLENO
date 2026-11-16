@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Nutricionista en Jaén y online: SIBO, colon irritable, nutrición oncológica y BLW. Educación nutricional sin dietas ni báscula, para disfrutar comiendo.">
-<!-- Mientras la web tenga textos provisionales, Google no la indexa. Quitar esta línea al publicar la versión definitiva. -->
 <title>Nutricionista en Jaén: digestivo y oncología | Isabel Lara</title>
 <link rel="canonical" href="https://www.isabellaranutricion.com/">
 <meta property="og:type" content="website">
@@ -18,12 +17,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=20261112">
+<link rel="stylesheet" href="assets/estilos.css?v=20261116">
 <script>
   // Aparición suave al hacer scroll: se activa antes de pintar para que no haya parpadeo.
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rv');
 </script>
-<script src="assets/menu.js?v=20261111b" defer></script>
+<script src="assets/menu.js?v=20261116" defer></script>
 </head>
 <body>
 
@@ -505,9 +504,12 @@
         </ul>
       </div>
       <div class="widget">
-        <!-- Widget de reserva de Doctoralia (código copiado del panel de Doctoralia) -->
+        <!-- Widget de reserva de Doctoralia: assets/menu.js carga su script solo si se aceptan las cookies -->
+        <div class="cookie-gate" hidden>
+          <p>Para ver aquí el calendario de reservas hay que aceptar las cookies de Doctoralia.</p>
+          <div class="row"><button type="button" class="btn small" data-cookies-aceptar>Aceptar y ver el calendario</button><a class="btn small ghost" href="https://www.doctoralia.es/perfil/isabel-lara-munoz" target="_blank" rel="noopener">Reservar en Doctoralia</a></div>
+        </div>
         <a id="zl-url" class="zl-url" href="https://www.doctoralia.es/perfil/isabel-lara-munoz" rel="nofollow" data-zlw-doctor="isabel-lara-munoz" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de reserva de citas médicas">Reserve una cita</a>
-        <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "https://platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
       </div>
     </div>
   </section>
@@ -549,9 +551,9 @@
     <span>© 2026 El Plato Lleno · Isabel Lara Muñoz · Jaén<br>Centro sanitario autorizado · NICA 70578 · Colegiada CODINAN AND-01693</span>
     <ul>
       <li><a href="blog/">Blog</a></li>
-      <li><a href="#inicio">Aviso legal</a></li>
-      <li><a href="#inicio">Privacidad</a></li>
-      <li><a href="#inicio">Cookies</a></li>
+      <li><a href="aviso-legal/">Aviso legal</a></li>
+      <li><a href="privacidad/">Privacidad</a></li>
+      <li><a href="cookies/">Cookies</a></li>
     </ul>
   </div>
 </footer>
